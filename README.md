@@ -16,10 +16,11 @@ https://medium.com/@bruno_boehm/reactjs-ruby-on-rails-api-heroku-app-2645c93f081
 Para hacer pruebas de React correr
  ~/chess960/react_chess960 $ npm start
 y acceder a 
-http://ec2-54-234-241-211.compute-1.amazonaws.com:3000/
+http://ec2-3-85-13-22.compute-1.amazonaws.com:3000/
 
 
 
+Para instalar mysql se corrio:
 
 
 ### DESIGN
@@ -52,3 +53,9 @@ http://ec2-54-234-241-211.compute-1.amazonaws.com:3000/
         - user_1
         - user_2
         
+
+## Rails (Active Record) Migrations
+https://edgeguides.rubyonrails.org/active_record_migrations.html
+
+## Active Record data types
+https://guides.rubyonrails.org/v3.2/migrations.html#supported-types
