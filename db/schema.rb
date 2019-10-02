@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_02_035732) do
+ActiveRecord::Schema.define(version: 2019_10_02_040904) do
 
-  create_table "matches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "matches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "result"
     t.string "moves"
     t.datetime "created_at", precision: 6, null: false
@@ -23,19 +23,20 @@ ActiveRecord::Schema.define(version: 2019_10_02_035732) do
     t.index ["user_2_id"], name: "index_matches_on_user_2_id"
   end
 
-  create_table "permissions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "permissions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_permissions_on_name", unique: true
   end
 
-  create_table "permissions_users", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "permissions_users", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "permission_id", null: false
     t.bigint "user_id", null: false
     t.index ["permission_id", "user_id"], name: "index_permissions_users_on_permission_id_and_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "username"
     t.string "secret"
     t.string "name"
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(version: 2019_10_02_035732) do
     t.string "country"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end
