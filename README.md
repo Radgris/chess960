@@ -1,3 +1,6 @@
+DEVELOPMENT_IP: 54.86.241.66
+
+
 Tutorial base:
 https://medium.com/@bruno_boehm/reactjs-ruby-on-rails-api-heroku-app-2645c93f0814
 

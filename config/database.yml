@@ -14,11 +14,12 @@ default: &default
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
+  port: 3306
 
 development:
   <<: *default
   database: chess960_development
-  username: root
+  username: chess960
   password: laWeaChess960.
 
 # Warning: The database defined as "test" will be erased and
