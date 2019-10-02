@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_02_024019) do
+ActiveRecord::Schema.define(version: 2019_10_02_035732) do
+
+  create_table "matches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "result"
+    t.string "moves"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_1_id"
+    t.bigint "user_2_id"
+    t.index ["user_1_id"], name: "index_matches_on_user_1_id"
+    t.index ["user_2_id"], name: "index_matches_on_user_2_id"
+  end
 
   create_table "permissions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
