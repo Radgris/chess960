@@ -1,7 +1,13 @@
-DEVELOPMENT_IP: 54.86.241.66
+## DEVELOPMENT_IP: 
+54.86.241.66
 
+## Listado de posiciones de tablero:
+https://www.mark-weeks.com/cfaa/chess960/c960strt.htm?fbclid=IwAR1jJnRPnalQ9y0ZEMoK5AkTzpbmLQ7EJqfSASbivDRLoacC5ytz0sAsomg
 
-Tutorial base:
+## invisiion:
+https://projects.invisionapp.com/freehand/document/KcOPsJn1k
+
+## Tutorial base:
 https://medium.com/@bruno_boehm/reactjs-ruby-on-rails-api-heroku-app-2645c93f0814
 
 - Comando usado para crear el proyecto de rails:
@@ -13,17 +19,12 @@ https://medium.com/@bruno_boehm/reactjs-ruby-on-rails-api-heroku-app-2645c93f081
 - Comando usado para crear el proyecto de react:
     ~/chess960 $ npx create-react-app react_chess960
 
-
-
-
-Para hacer pruebas de React correr
+## Para hacer pruebas de React correr
  ~/chess960/react_chess960 $ npm start
-y acceder a 
-http://ec2-3-85-13-22.compute-1.amazonaws.com:3000/
+ y acceder a 
+ http://ec2-3-85-13-22.compute-1.amazonaws.com:3000/
 
-
-
-Para instalar mysql se corrio:
+#### Para instalar mysql se corrio:
 
 
 ### DESIGN
@@ -62,3 +63,7 @@ https://edgeguides.rubyonrails.org/active_record_migrations.html
 
 ## Active Record data types
 https://guides.rubyonrails.org/v3.2/migrations.html#supported-types
+
+## lista de endpoints
+
+
