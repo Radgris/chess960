@@ -1,3 +1,7 @@
+## Environment variables required:
+- DEVISE_JWT_SECRET_KEY
+- 
+
 ## DEVELOPMENT_IP: 
 54.86.241.66
 
@@ -18,6 +22,14 @@ https://medium.com/@bruno_boehm/reactjs-ruby-on-rails-api-heroku-app-2645c93f081
     
 - Comando usado para crear el proyecto de react:
     ~/chess960 $ npx create-react-app react_chess960
+
+
+## Tutorial Devise:
+
+https://medium.com/@mazik.wyry/rails-5-api-jwt-setup-in-minutes-using-devise-71670fd4ed03
+
+https://github.com/bkeepers/dotenv
+
 
 ## Para hacer pruebas de React correr
  ~/chess960/react_chess960 $ npm start
