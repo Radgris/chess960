@@ -2,12 +2,23 @@
   /* For mobile phones: */
   .chess-board{
     width: 100% !important;
+    flex: 0 !important;
   }
   .login-form {
     margin-top: 40% !important;
   }
   .date {
     width: 91% !important;
+  }
+  .player-history{
+    margin: 10px 0px !important;
+    width: 100% !important;
+  }
+  .player-info{
+    flex-direction: column !important;
+  }
+  .player-personal{
+    width: 90% !important;
   }
 }
 .App {
@@ -65,6 +76,7 @@
   background-color: #212121;
   width: 50%;
   margin: auto;
+  flex: 1;
 }
 
 .chess-cell{
@@ -114,6 +126,8 @@
   font-size: 1.5em;
   margin: 10px auto;
   border: 0;
+  color: #ffffff;
+  background-color: #000000;
 }
 
 .form-input{
@@ -132,4 +146,21 @@
 .piece-image {
   width: 100%;
   margin: auto;
+}
+
+.player-history{
+  width: 50%;
+  margin: 10px 30px;
+  border: #000000 solid .2em;
+}
+
+.player-personal{
+  width: 50%;
+}
+
+.player-info{
+  display: flex;
+  flex: 1;
+  margin: auto;
+  width: 90%;
 }

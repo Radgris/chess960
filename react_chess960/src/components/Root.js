@@ -7,6 +7,7 @@ import Footer from './Footer';
 import Login from './Login';
 import Board from './Board';
 import SignUp from './SignUp';
+import PlayerInfo from './PlayerInfo';
 
 const Root = (props) => {
   return(
@@ -17,6 +18,7 @@ const Root = (props) => {
       <Route path="/login" component={Login} />
       <Route path="/board" component={Board}/>
       <Route path="/signup" component={SignUp}/>
+      <Route path="/player/:id" component={PlayerInfo}/>
     </Router>
     <Footer></Footer>
   </div>
