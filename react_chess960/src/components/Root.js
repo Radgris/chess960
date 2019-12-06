@@ -8,15 +8,20 @@ import Login from './Login';
 import Board from './Board';
 import SignUp from './SignUp';
 import PlayerInfo from './PlayerInfo';
+import PrivateRoute from './PrivateRoute'
 
 const Root = (props) => {
   return(
   <div className='Root'>
     <Header></Header>
     <Router>
-      <Route path="/hello_world" component={App} />
+      <PrivateRoute path='/hello_world' >
+        <App/>
+      </PrivateRoute>
       <Route path="/login" component={Login} />
-      <Route path="/board" component={Board}/>
+      <PrivateRoute path='/board' >
+        <Board/>
+      </PrivateRoute>
       <Route path="/signup" component={SignUp}/>
       <Route path="/player/:id" component={PlayerInfo}/>
     </Router>

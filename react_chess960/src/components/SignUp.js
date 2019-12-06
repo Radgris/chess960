@@ -9,16 +9,7 @@ const SignUp = () => {
                 <h1>Sign Up</h1>
                 
                 <div className='form-input'>
-                    <input name='name' type='text' placeholder='Name'/>
-                </div>
-                <div className='form-input'>
-                    <input name='lastname' type='text' placeholder='Last Name'/>
-                </div>
-                <div className='form-input'>
-                    <input name='birthdate' type='date' min='1980-01-01' max={`${day.getYear()}-${day.getMonth()}-${day.getDate()       }`}/>
-                </div>
-                <div className='form-input'>
-                    <input name='country' type='country' placeholder='Country'/>
+                    <input name='username' type='text' placeholder='Name'/>
                 </div>
                 <div className='form-input'>
                     <input name="email"  type="text" placeholder="Email Ex.(elani@email.com)" />
@@ -27,6 +18,11 @@ const SignUp = () => {
                 <div className='form-input'>
                     <input name="password" type="password" placeholder="Password"/>
                 </div>
+                
+                <div className='form-input'>
+                    <input name="password_confirmation" type="password" placeholder="Password"/>
+                </div>
+                
                 <div className='form-input'>
                     <div className='form-actions'>
                         <a href='/login'>Back to Login</a>
@@ -41,30 +37,19 @@ const SignUp = () => {
 
 const handleSubmit = (e) => {
      e.preventDefault();
-     console.log(e.target.birthdate.value);
-     axios.post('http://ec2-54-86-241-66.compute-1.amazonaws.com:8080/signup',
+     axios.post('http://54.86.241.66:8080/signup',
         {
-            headers: 
-                {
-                    'Access-Control-Allow-Origin': '*'
-                    
-                }
-        },
-        {
-            data:
-                {
-                    name: e.target.name.value,
-                    lastname: e.target.lastname.value,
-                    birthdate: e.target.birthdate.value,
-                    country: e.target.country.value,
-                    email: e.target.email.value,
-                    password: e.target.password.value
-                }
+            username: e.target.username.value,
+            email: e.target.email.value,
+            password: e.target.password.value,            
+            password_confirmation: e.target.password_confirmation.value
         }
-     ).catch((e)=>{
+     ).then((res)=>{
+         console.log('sign in user here with reducer')
+     })
+     .catch((e)=>{
          console.log(e)
      })
-     console.log("ahoyyy")
 }
 
 export default SignUp;

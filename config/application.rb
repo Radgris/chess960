@@ -37,7 +37,11 @@ module Chess960
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
-        resource '*', :headers => :any, :methods => [:get, :post, :patch, :options]
+        resource '*',
+          :headers => :any,
+          :methods => [:get, :post, :patch, :options],
+          :expose => %w(Authorization),
+          :max_age => 600
       end
     end
 

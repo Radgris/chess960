@@ -3,6 +3,8 @@ require_relative '../pieces/pieces.rb'
 
 class Board
 
+    attr_accessor :tile
+
     def initialize()
         @tile = Array.new(8) { Array.new(8, nil) }
         seed = rand(959)

@@ -9,7 +9,7 @@ const reducer = (state = {}, action) => {
         case 'MOVE_PIECE':
             return {...state, board: movePiece(action.payload, state.board, state.selectedPiece), selectedPiece:null};
         default:
-            return {board:setPieces(['B','R','K','R','N','B','N','Q'], 0), playerNumber: 0, selectedPiece:null, eatenPieces: null};
+            return {board:setPieces(['B','R','K','R','N','B','N','Q'], 0), playerNumber: 0, selectedPiece:null, eatenPieces: null, sessionState: false, jwt: null};
     }
 };
 

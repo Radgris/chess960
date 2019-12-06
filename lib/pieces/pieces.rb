@@ -11,18 +11,16 @@ class Piece
         @can_move_to = []
     end
     
-    
     def move(target)
         
         if(can_move_to.include?(target))
         
             @x = target[0]
             @y = target[1]
-        
+            
+            @has_moved = true
         end
-        
     end
-    
     
     def is_possible_move_to()
     
@@ -31,7 +29,6 @@ class Piece
         for i in movelist
         
             a = @x + i[0]
-            
             b = @y + i[1]
             
             loop do
@@ -53,13 +50,9 @@ class Piece
                     
                         puts'cant move this piece in this direction'
                         break
-                        
-                    
                     end
                 end
-                
-                break if(longmovement == true)
-                
+                break if(longmovement == false)
             end
         end
     end
@@ -173,14 +166,19 @@ class Pawn < Piece
         if(self.color == 'black')
         
         @movelist=[
-            [0,1]
-            
+            [0,2],
+            [0,1],
+            [1,1],
+            [-1,1]
             ]
         
         else
             
         @movelist=[
-            [0,-1]
+            [0,-2],
+            [0,-1],
+            [1,-1],
+            [-1,1]
             ]
             
         end    
@@ -188,11 +186,74 @@ class Pawn < Piece
         super
     end
     
-    
-    
-    
-    
+  ##custom method for pawn due to the directon of movement and different eating pattern
+  
+    def is_possible_move_to()
+      
+        if(has_moved == false)
+        
+            a = @x + movelist[0][0]
+            b = @y + movelist[0][1]
+            
+            if (Board.includes?(a,b))
+                
+                if (tile[a][b].color == !@color)
+                   
+                elsif (tile[a][b].nil?)
+                
+                    can_move_to.push(tile[a][b], "Move")
+                
+                else
+                    
+                    puts'cant move this piece in this direction'
+                    break
+                      
+                    
+                end
+            end    
+        end
+        
+        a = @x + movelist[1][0]
+        b = @y + movelist[1][1]
+        
+        if(Board.includes?(a,b))
+            
+            if(tile[a][b].nil?)
+                
+                can_move_to.push(tile[a][b], "Move")
+            end
+        end
+        
+        
+        for i in 2...3
+        
+            a = @x + movelist[i][0]
+            b = @y + movelist[i][1]
+            
+            loop do
+            
+                if(Board.includes?(a,b))
+                    
+                    if(tile[a][b].color == !@color)
+                        
+                        can_move_to.push(tile[a][b], "Eat")
+                        break
+                        #pice is eaten    
+                        
+                    else
+                        
+                        puts'cant move this piece in this direction'
+                        break
+                    end
+                end
+                    break if(longmovement == false)
+            end
+        end
+    end
 end
+
+
+
 
 class PieceFactory
     def self.createPiece(key, position, faction)
